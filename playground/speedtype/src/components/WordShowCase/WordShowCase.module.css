@@ -1,0 +1,12 @@
+
+.wordsShowCase {
+    height: 80%;
+    background: red;
+    display: flex;
+}
+
+.wordHolder {
+    display: flex;
+    margin: auto;
+}
+
