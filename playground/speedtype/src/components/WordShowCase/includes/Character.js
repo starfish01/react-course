@@ -9,9 +9,12 @@ const Character = (props) => {
         newClass += `  ${styles.wrong}`;
     }
 
+    if (props.currentKey) {
+        newClass += ` ${styles.currentKey}`;
+    }
 
     return (
-        <div className={newClass}>{props.character}</div>
+        <div className={newClass} >{props.character}</div>
     );
 
 };

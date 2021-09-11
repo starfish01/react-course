@@ -3,16 +3,29 @@ import Character from "./includes/Character";
 
 const WordShowCase = (props) => {
 
-    let array = props.wordsToType;
+    let offset = 0.5;
+    let hasTyped = false;
 
-    console.log(array);
+    const wordsData = props.wordsToType.map((character, index) => {
+        let currentKey = false;
+        if (character.position) {
+            offset +=1;
+            hasTyped = true;
+        }
+        if ((hasTyped && !character.position) || (index === 0 && !hasTyped)) {
+            currentKey = true;
+            hasTyped = false;
+        }
+
+        return <Character key={index} currentKey={currentKey} position={character.position} character={character.letter}/>
+    });
+
+    offset = '-' + offset * 60 + 'px';
 
     return (
         <div className={styles.wordsShowCase}>
-            <div className={styles.wordHolder}>
-                { array.map((character, index) =>
-                    <Character key={index} position={character.position} character={character.letter}/>)
-                }
+            <div className={styles.wordHolder} style={{marginLeft: offset}}>
+                {wordsData}
             </div>
         </div>
     );

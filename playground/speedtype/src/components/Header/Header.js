@@ -1,18 +1,18 @@
 import styles from './Header.module.css';
+import ActiveHeaderItems from "./ActiveHeaderItems/ActiveHeaderItems";
 
 const Header = (props) => {
+
+    let headerItems = '';
+    if (props.active) {
+        headerItems = <ActiveHeaderItems countDownTimeRemaining={props.countDownTimeRemaining} currentScore={props.currentScore} onEndActivity={props.onEndActivity}/>
+    }
 
     return (
         <div className={styles.header}>
             <a href="/" className={`${styles.logo} ${styles.item}`}>Speed Type</a>
             <div className={styles.headerRight}>
-                <div className={styles.sideButtons}>
-                    <div className={styles.item}>
-                        Count Down: 60:00
-                    </div>
-                    <button onClick={props.onEndActivity} className={styles.item}>Exit</button>
-                    {/*<button className={styles.item} >Reset</button>*/}
-                </div>
+                {headerItems}
             </div>
         </div>
     );

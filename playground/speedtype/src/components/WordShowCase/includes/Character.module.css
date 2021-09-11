@@ -3,7 +3,7 @@
     height: 50px;
     background: white;
     border: solid;
-    font-size: 2vw;
+    font-size: 30px;
     text-align: center;
     margin: 2px;
 }
@@ -16,4 +16,7 @@
 }
 .wrong {
     background: darkred;
+}
+.currentKey {
+    border-color: yellow;
 }

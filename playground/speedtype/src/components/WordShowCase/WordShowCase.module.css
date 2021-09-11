@@ -3,6 +3,8 @@
     height: 80%;
     background: red;
     display: flex;
+    width: 50%;
+    margin-left: 50%;
 }
 
 .wordHolder {

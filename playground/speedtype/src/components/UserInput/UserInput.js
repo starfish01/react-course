@@ -7,19 +7,27 @@ const UserInput = (props) => {
 
     const newInput = newUserInput => {
         let key = newUserInput.key;
+
+        if (key === 'Shift' || key === 'Backspace') {
+            return;
+        }
+
         // send it back and clear
         props.onUserInput(key);
         setInput('');
-        console.log(newUserInput.key);
     }
     
     const changeValue = () => {
 
     }
 
+
     let displayInput = <div onClick={props.onStartActivity} className={styles.start}><button>Start</button></div>;
     if (props.active) {
-        displayInput = <div className={styles.textInput}><input value={input} onChange={changeValue} onKeyDown={newInput} type="text"/></div>;
+        displayInput = <div className={styles.textInput}>
+            <input value={input} onChange={changeValue} onKeyDown={newInput} type="text"/>
+        </div>;
+
     }
 
 

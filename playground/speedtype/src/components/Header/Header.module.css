@@ -4,22 +4,6 @@
   padding: 20px 10px;
 }
 
-.item {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.side-buttons {
-  display: flex;
-  justify-content: flex-end;
-}
-
 a.logo {
   font-size: 25px;
   font-weight: bold;
@@ -36,4 +20,14 @@ a:hover {
 
 .hide {
   display: none;
+}
+.item {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
