@@ -1,14 +1,14 @@
 import './App.css';
 import Header from "./components/Header/Header";
-import WordShowCase from "./components/WordShowCase/WordShowCase";
+import WordShowCase from "./components/CoreSection/WordShowCase/WordShowCase";
 import UserInput from "./components/UserInput/UserInput";
 import {useState} from "react";
-import EndGameScore from "./components/EndGameScore/EndGameScore";
-
+import EndGameScore from "./components/CoreSection/EndGameScore/EndGameScore";
+import Welcome from "./components/CoreSection/Welcome/Welcome";
 
 const App = () => {
 
-    const countDownTimeAllocated = 60;
+    const countDownTimeAllocated = 5;
 
     const [active, setActive] = useState(false);
     const [wordsToType, setWordsToType] = useState([]);
@@ -98,12 +98,12 @@ const App = () => {
     let charPerMinute = 0;
     charPerMinute = charactersTyped;
 
-    let display = 'Hi';
+    let display = <Welcome/>;
     if (active) {
         display = <WordShowCase wordsToType={wordsToType}/>;
     } else if (displayEndGameScore) {
         // work out words per minute
-        display = <EndGameScore currentScore={currentScore} charPerMinute={charPerMinute}/>
+        display = <EndGameScore currentScore={currentScore} charPerMinute={charPerMinute} typedDetails={wordsToType} userInput={userInput}/>
     }
 
 
